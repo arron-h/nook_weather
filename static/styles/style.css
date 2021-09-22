@@ -1,0 +1,24 @@
+body {
+    font-family: Arial;
+    margin: 0px;
+}
+
+#content {
+    width: 600px;
+    height: 800px;
+    margin: 0px;
+}
+
+#periods {
+    width: 600px;
+    height: 800px;
+    overflow: auto;
+    margin: 0px;
+}
+
+.period {
+    display: inline-block;
+    width: 150px;
+    height: 300px;
+    margin: 0px;
+}

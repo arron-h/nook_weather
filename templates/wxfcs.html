@@ -1,24 +1,36 @@
 <html>
   <head>
     <title>Nook WX</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
   </head>
   <body>
-    Date: {{ date }}
-    {% for wx_period in wx_periods %}
-    <div>
-      Time: {{ wx_period.time }}
-      <ul>
-        <li>Temp: {{ wx_period.T }}</li>
-        <li>Feels like: {{ wx_period.F }}</li>
-        <li>Rain: {{ wx_period.Pp }}%</li>
-        <li>UV: {{ wx_period.uv }}</li>
-        <li>WX: {{ wx_period.wx }}</li>
-        <li>Vis: {{ wx_period.vis }}</li>
-        <li>Wind Speed: {{ wx_period.S }}mph</li>
-        <li>Humidity: {{ wx_period.H }}%</li>
-        <li>Wind Dir: {{ wx_period.D }}</li>
-      </ul>
+    <div id="content">
+        Date: {{ date }}
+        <div id="periods">
+            {% for wx_period in wx_periods %}
+            <div class="period">
+                <div class="time">{{ wx_period.time }}</div>
+                <div class="wx-type">{{ wx_period.wx }}</div>
+                <div class="feels-like-lbl">Feels like</div>
+                <div class="temp-grp"><span class="feels-like">{{ wx_period.F }}&deg;C</span><span class="temp">({{ wx_period.T }}&deg;C)</span></div>
+                <div class="precip-grp"><img src="/static/umbrella-rain.png" width="16" height="16"/><span class="precip">{{ wx_period.Pp }}%</span></div>
+                <div class="humidity-grp"><img src="/static/humidity.png" width="16" height="16"/><span class="humidity">{{ wx_period.H }}%</span></div>
+                <div class="uv_vis">
+                    <div class="uv">
+                        <div class="uv-lbl">UV</div>
+                        <div class="uv-val">{{ wx_period.uv }}</div>
+                    </div>
+                    <div class="vis">
+                        <div class="vis-lbl">Vis</div>
+                        <div class="vis-val">{{ wx_period.vis }}</div>
+                    </div>
+                </div>
+                <div class="wind-grp">
+                    <span class="wind-{{ wx_period.D }}">{{ wx_period.S }}</span>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
     </div>
-    {% endfor %}
   </body>
 </html>

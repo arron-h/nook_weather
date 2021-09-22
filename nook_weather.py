@@ -63,8 +63,13 @@ def get_wx(location_id):
     if (r.status != 200):
         return None
 
-    decoded_data = r.data.decode("utf-8")
-    return json.loads(decoded_data)
+    try:
+        decoded_data = r.data.decode("utf-8")
+        json_data = json.loads(decoded_data)
+    except Exception as e:
+        raise RuntimeError(f"Loading JSON: {e}")
+    
+    return json_data
 
 
 def process_wx(raw_wx):
@@ -74,7 +79,7 @@ def process_wx(raw_wx):
     reps = this_period["Rep"]
     value = this_period["value"]
     d = datetime.datetime.strptime(value, "%Y-%m-%dZ")
-    date = d.strftime("%A %-d %B")
+    date = d.strftime("%A %d %B")
 
     for idx in range(0, len(reps)):
         r = reps[idx]
