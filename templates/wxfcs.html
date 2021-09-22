@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Nook WX</title>
+  </head>
+  <body>
+    Date: {{ date }}
+    {% for wx_period in wx_periods %}
+    <div>
+      Time: {{ wx_period.time }}
+      <ul>
+        <li>Temp: {{ wx_period.T }}</li>
+        <li>Feels like: {{ wx_period.F }}</li>
+        <li>Rain: {{ wx_period.Pp }}%</li>
+        <li>UV: {{ wx_period.uv }}</li>
+        <li>WX: {{ wx_period.wx }}</li>
+        <li>Vis: {{ wx_period.vis }}</li>
+        <li>Wind Speed: {{ wx_period.S }}mph</li>
+        <li>Humidity: {{ wx_period.H }}%</li>
+        <li>Wind Dir: {{ wx_period.D }}</li>
+      </ul>
+    </div>
+    {% endfor %}
+  </body>
+</html>
