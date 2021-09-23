@@ -2,6 +2,7 @@ import flask
 import urllib3
 import json
 import datetime
+import os
 
 app = flask.Flask(__name__)
 
@@ -68,7 +69,7 @@ def get_wx(location_id):
         json_data = json.loads(decoded_data)
     except Exception as e:
         raise RuntimeError(f"Loading JSON: {e}")
-    
+
     return json_data
 
 
@@ -136,6 +137,19 @@ def build_wx_data(location):
 
     return process_wx(wx)
 
+
+@app.context_processor
+def override_url_for():
+    return dict(url_for=dated_url_for)
+
+def dated_url_for(endpoint, **values):
+    if endpoint == 'static':
+        filename = values.get('filename', None)
+        if filename:
+            file_path = os.path.join(app.root_path,
+                                     endpoint, filename)
+            values['q'] = int(os.stat(file_path).st_mtime)
+            return flask.url_for(endpoint, **values)
 
 @app.route('/', methods=['GET'])
 def home():

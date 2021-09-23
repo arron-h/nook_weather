@@ -14,11 +14,155 @@ body {
     height: 800px;
     overflow: auto;
     margin: 0px;
+    margin-top: 10px;
+    font-size: 0px;
 }
 
 .period {
     display: inline-block;
-    width: 150px;
-    height: 300px;
+    width: 200px;
+    height: 250px;
     margin: 0px;
+    font-size: 14px;
+}
+
+.time-hr {
+    font-weight: bold;
+}
+
+.wx-type {
+    width: 200px;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.feels-like-lbl {
+    margin-top: 9px;
+    font-size: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.time {
+    width: 200px;
+    text-align: center;
+}
+
+.temp-grp {
+    width: 200px;
+    text-align: center;
+}
+
+.precip-grp {
+    width: 200px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.humidity-grp {
+    width: 200px;
+    text-align: center;
+}
+
+.feels-like {
+    font-size: 24px;
+}
+
+.temp {
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.humidity {
+    margin-left: 2px;
+}
+
+.uv-vis {
+    width: 200px;
+    margin-top: 10px;
+}
+
+.uv-vis-col {
+    width: 100px;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.uv-vis-lbl {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.uv-vis-val {
+    font-size: 13px;
+}
+
+.wind-grp {
+    width: 200px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.wind {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+}
+
+.wind-N {
+    transform: rotate(180deg);
+}
+.wind-NNE {
+    transform: rotate(202.5deg);
+}
+.wind-NE {
+    transform: rotate(225deg);
+}
+.wind-ENE {
+    transform: rotate(247.5deg);
+}
+.wind-E {
+    transform: rotate(270deg);
+}
+.wind-ESE {
+    transform: rotate(292.5deg);
+}
+.wind-SE {
+    transform: rotate(315deg);
+}
+.wind-SSE {
+    transform: rotate(337.5deg);
+}
+.wind-S {
+    transform: rotate(0deg);
+}
+.wind-SSW {
+    transform: rotate(22.5deg);
+}
+.wind-SW {
+    transform: rotate(45deg);
+}
+.wind-WSW {
+    transform: rotate(67.5deg);
+}
+.wind-W {
+    transform: rotate(90deg);
+}
+.wind-WNW {
+    transform: rotate(112.5deg);
+}
+.wind-NW {
+    transform: rotate(135deg);
+}
+.wind-NNW {
+    transform: rotate(157.5deg);
+}
+
+
+.wind-mph {
+    position: relative;
+    top: -45;
 }
