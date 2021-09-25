@@ -156,7 +156,7 @@ def home():
     return "<h1>Nook MetOffice Weather</h1><p>Available endpoints:</p><ul><li>/wxfcs/sale</li></ul>"
 
 
-@app.route('/wxfcs', methods=['GET'])
+@app.route('/weather', methods=['GET'])
 def wxfcs():
     try:
         page_data = build_wx_data("sale")
