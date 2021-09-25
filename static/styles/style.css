@@ -27,13 +27,13 @@ body {
 
 .col {
     display: inline-block;
-    width: 200px;
+    width: 190px;
     height: 250px;
     vertical-align: top;
 }
 
 .time {
-    width: 200px;
+    width: 190px;
     text-align: center;
     font-size: 22px;
 }
@@ -43,7 +43,7 @@ body {
 }
 
 .wx-type {
-    width: 200px;
+    width: 190px;
     text-align: center;
     margin-top: 20px;
     font-size: 28px;
@@ -52,32 +52,32 @@ body {
 .feels-like-lbl {
     margin-top: 10px;
     font-size: 14px;
-    width: 200px;
+    width: 190px;
     text-align: center;
 }
 
 .feels-like {
     font-size: 30px;
-    width: 200px;
+    width: 190px;
     text-align: center;
 }
 
 .temp {
     font-size: 16px;
-    width: 200px;
+    width: 190px;
     text-align: center;
     margin-top: 10px;
 }
 
 .precip-grp {
-    width: 200px;
+    width: 190px;
     text-align: center;
     margin-top: 10px;
     font-size: 18px;
 }
 
 .humidity-grp {
-    width: 200px;
+    width: 190px;
     text-align: center;
     font-size: 18px;
 }
@@ -87,16 +87,17 @@ body {
 }
 
 .uv-vis {
-    width: 200px;
+    width: 190px;
     margin-top: 10px;
 }
 
 .uv-vis-col {
-    width: 100px;
+    width: 95px;
     display: inline-block;
     margin: 0px;
     padding: 0px;
     text-align: center;
+    vertical-align: top;
 }
 
 .uv-vis-lbl {
@@ -110,7 +111,7 @@ body {
 
 .wind-grp {
     margin-top: 24px;
-    width: 200px;
+    width: 190px;
     overflow: hidden;
     text-align: center;
 }
