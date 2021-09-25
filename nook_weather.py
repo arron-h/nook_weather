@@ -153,7 +153,7 @@ def dated_url_for(endpoint, **values):
 
 @app.route('/', methods=['GET'])
 def home():
-    return "<h1>Nook MetOffice Weather</h1><p>Available endpoints:</p><ul><li>/wxfcs/sale</li></ul>"
+    return "<h1>Nook MetOffice Weather</h1><p>Available endpoints:</p><ul><li>/weather</li></ul>"
 
 
 @app.route('/weather', methods=['GET'])
@@ -163,7 +163,7 @@ def wxfcs():
     except Exception as e:
         return f"Error: {e}."
 
-    return flask.render_template("wxfcs.html", date=page_data[0], wx_periods=page_data[1])
+    return flask.render_template("wxfcs.html", period_limit=3, date=page_data[0], wx_periods=page_data[1])
 
 
 if __name__ == "__main__":

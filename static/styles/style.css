@@ -19,11 +19,23 @@ body {
 }
 
 .period {
+    width: 600px;
+    height: 250px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.col {
     display: inline-block;
     width: 200px;
     height: 250px;
-    margin: 0px;
-    font-size: 14px;
+    vertical-align: top;
+}
+
+.time {
+    width: 200px;
+    text-align: center;
+    font-size: 22px;
 }
 
 .time-hr {
@@ -33,49 +45,45 @@ body {
 .wx-type {
     width: 200px;
     text-align: center;
-    margin-top: 5px;
-    font-size: 16px;
+    margin-top: 20px;
+    font-size: 28px;
 }
 
 .feels-like-lbl {
-    margin-top: 9px;
-    font-size: 10px;
+    margin-top: 10px;
+    font-size: 14px;
     width: 200px;
     text-align: center;
 }
 
-.time {
+.feels-like {
+    font-size: 30px;
     width: 200px;
     text-align: center;
 }
 
-.temp-grp {
+.temp {
+    font-size: 16px;
     width: 200px;
     text-align: center;
+    margin-top: 10px;
 }
 
 .precip-grp {
     width: 200px;
     text-align: center;
     margin-top: 10px;
+    font-size: 18px;
 }
 
 .humidity-grp {
     width: 200px;
     text-align: center;
+    font-size: 18px;
 }
 
-.feels-like {
-    font-size: 24px;
-}
-
-.temp {
-    font-size: 12px;
-    margin-left: 4px;
-}
-
-.humidity {
-    margin-left: 2px;
+.humidity_precip {
+    margin-left: 6px;
 }
 
 .uv-vis {
@@ -92,15 +100,16 @@ body {
 }
 
 .uv-vis-lbl {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 .uv-vis-val {
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .wind-grp {
+    margin-top: 24px;
     width: 200px;
     overflow: hidden;
     text-align: center;
@@ -165,4 +174,5 @@ body {
 .wind-mph {
     position: relative;
     top: -45;
+    font-size: 16px;
 }

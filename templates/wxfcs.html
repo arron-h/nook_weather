@@ -2,25 +2,36 @@
   <head>
     <title>Nook WX</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <meta http-equiv="refresh" content="3600" >
   </head>
   <body>
     <div id="content">
         {{ date }}
         <div id="periods">
-            {% for wx_period in wx_periods -%}
+            {% for wx_period in wx_periods[0:period_limit] -%}
             <div class="period">
-              <div class="time"><span class="time-hr">{{ wx_period.time[0:2] }}</span><span class="time-mins">{{ wx_period.time[2:] }}</span></div>
+              <div class="col">
+                <div class="time"><span class="time-hr">{{ wx_period.time[0:2] }}</span><span class="time-mins">{{ wx_period.time[2:] }}</span></div>
                 <div class="wx-type">{{ wx_period.wx|upper }}</div>
+              </div>
+
+              <div class="col">
                 <div class="feels-like-lbl">Feels like</div>
-                <div class="temp-grp"><span class="feels-like">{{ wx_period.F }}&deg;C</span><span class="temp">({{ wx_period.T }}&deg;C)</span></div>
-                <div class="precip-grp"><img src="/static/umbrella-rain.png" width="16" height="16"/><span class="precip">{{ wx_period.Pp }}%</span></div>
-                <div class="humidity-grp"><img src="/static/humidity.png" width="12" height="12"/><span class="humidity">{{ wx_period.H }}%</span></div>
+                <div class="feels-like">{{ wx_period.F }}&deg;C</div>
+                <div class="temp">({{ wx_period.T }}&deg;C)</div>
+                <div class="precip-grp"><img src="/static/umbrella-rain.png" width="24" height="24"/><span class="humidity_precip">{{ wx_period.Pp }}%</span></div>
+                <div class="humidity-grp"><img src="/static/humidity.png" width="20" height="20"/><span class="humidity_precip">{{ wx_period.H }}%</span></div>
+              </div>
+
+              <div class="col">
                 <div class="uv-vis">
                     <div class="uv-vis-col"><div class="uv-vis-lbl">UV</div><div class="uv-vis-val">{{ wx_period.uv|upper }}</div></div><div class="uv-vis-col"><div class="uv-vis-lbl">Vis</div><div class="uv-vis-val">{{ wx_period.vis|upper }}</div></div>
                 </div>
                 <div class="wind-grp">
                   <div class="wind"><img src="/static/wind-n.png" class="wind-{{ wx_period.D }}"><span class="wind-mph">{{ wx_period.S }}</span></div>
                 </div>
+              </div>
+
             </div>
         {% endfor -%}
         </div>
