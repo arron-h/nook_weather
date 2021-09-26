@@ -82,6 +82,7 @@ def process_wx(raw_wx):
     d = datetime.datetime.strptime(value, "%Y-%m-%dZ")
     date = d.strftime("%A %d %B")
 
+    new_reps = []
     for idx in range(0, len(reps)):
         r = reps[idx]
 
@@ -90,8 +91,12 @@ def process_wx(raw_wx):
         r["mins"] = mins
 
         # 12-hr time
-        d = datetime.datetime.strptime(str(int(int(mins) / 60)) + "00", "%H%M")
+        d = datetime.datetime.now()
+        d = d.replace(hour=(int(int(mins)/60)), minute=0, second=0, microsecond=0)
         r["time"] = d.strftime("%H%M")
+
+        if datetime.datetime.now() > d:
+            continue
 
         # UV exposure
         uv_idx = int(r["U"])
@@ -119,10 +124,10 @@ def process_wx(raw_wx):
         vis_str = VIS_STR_MAP[vis_code]
         r["vis"] = vis_str
 
-        # Set rep at index
-        reps[idx] = r
+        # Append new rep
+        new_reps.append(r)
 
-    return (date, reps)
+    return (date, new_reps)
 
 
 def build_wx_data(location):
