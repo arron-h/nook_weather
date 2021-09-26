@@ -82,6 +82,8 @@ def process_wx(raw_wx):
     d = datetime.datetime.strptime(value, "%Y-%m-%dZ")
     date = d.strftime("%A %d %B")
 
+    time_threshold = datetime.timedelta(hours=2)
+
     new_reps = []
     for idx in range(0, len(reps)):
         r = reps[idx]
@@ -95,7 +97,7 @@ def process_wx(raw_wx):
         d = d.replace(hour=(int(int(mins)/60)), minute=0, second=0, microsecond=0)
         r["time"] = d.strftime("%H%M")
 
-        if datetime.datetime.now() > d:
+        if datetime.datetime.now() - time_threshold > d:
             continue
 
         # UV exposure
