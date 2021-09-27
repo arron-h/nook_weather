@@ -2,6 +2,7 @@
   <head>
     <title>Nook WX</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/weather-icons.min.css') }}">
     <meta http-equiv="refresh" content="3600" >
   </head>
   <body>
@@ -13,6 +14,7 @@
               <div class="col">
                 <div class="time"><span class="time-hr">{{ wx_period.time[0:2] }}</span><span class="time-mins">{{ wx_period.time[2:] }}</span></div>
                 <div class="wx-type">{{ wx_period.wx|upper }}</div>
+                <div class="wx-icon"><i class="wi wi-night-sleet"></i></div>
               </div>
 
               <div class="col">
